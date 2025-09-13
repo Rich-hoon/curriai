@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "build": "dotenv -e ./.env.local -- turbo run build",
+    "build:app": "pnpm --filter @myapp/app build",
     "dev": "dotenv -e ./.env.local -- turbo run dev",
     "lint": "dotenv -e ./.env.local -- turbo run lint",
     "test": "dotenv -e ./.env.local -- turbo run test",
