@@ -1,17 +1,9 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "apps/app/package.json",
-      "use": "@vercel/next",
-      "config": {
-        "distDir": ".next"
-      }
-    }
-  ],
+  "buildCommand": "cd apps/app && pnpm run build",
+  "outputDirectory": "apps/app/.next",
+  "installCommand": "pnpm install",
   "env": {
     "NODE_ENV": "production"
-  },
-  "installCommand": "pnpm install",
-  "buildCommand": "pnpm --filter @myapp/app build"
+  }
 }
