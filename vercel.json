@@ -81,13 +81,5 @@
       "destination": "/app/community",
       "permanent": false
     }
-  ],
-  "functions": {
-    "apps/app/pages/api/**/*.js": {
-      "runtime": "nodejs18.x"
-    },
-    "apps/www/pages/api/**/*.js": {
-      "runtime": "nodejs18.x"
-    }
-  }
+  ]
 }
