@@ -46,16 +46,10 @@ export default async function LocaleLayout({
         >
           <NextIntlClientProvider messages={messages}>
             <Suspense fallback={<Skeleton />}>
-              <ClerkClientProvider publishableKey={publishableKey}>
-                {/* Temporarily disable AuthGuard for deployment testing */}
-                {/* <AuthGuard fallback={<Skeleton />}> */}
-                  {/* <UserProvider> */}
-                    <div className="min-h-screen bg-background">
-                      {children}
-                    </div>
-                  {/* </UserProvider> */}
-                {/* </AuthGuard> */}
-              </ClerkClientProvider>
+              {/* Temporarily disable Clerk completely for deployment testing */}
+              <div className="min-h-screen bg-background">
+                {children}
+              </div>
             </Suspense>
           </NextIntlClientProvider>
         </ThemeProvider>

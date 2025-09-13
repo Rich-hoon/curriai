@@ -33,12 +33,9 @@ export default function RootLayout({
       >
         <GoogleAnalytics4 />
         <Clarity />
-        <ClerkClientProvider publishableKey={publishableKey}>
-          <TRPCProvider>
-            <main>{children}</main>
-            <Toaster position="top-center" closeButton />
-          </TRPCProvider>
-        </ClerkClientProvider>
+        {/* Temporarily disable Clerk and TRPC for deployment testing */}
+        <main>{children}</main>
+        <Toaster position="top-center" closeButton />
       </body>
     </html>
   );
