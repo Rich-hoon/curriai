@@ -46,6 +46,7 @@ export default async function LocaleLayout({
         >
           <NextIntlClientProvider messages={messages}>
             <Suspense fallback={<Skeleton />}>
+
               {/* Temporarily disable Clerk completely for deployment testing */}
               <div className="min-h-screen bg-background">
                 {children}

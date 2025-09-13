@@ -1,8 +1,0 @@
-{
-  "version": 2,
-  "buildCommand": "pnpm --filter @myapp/app build",
-  "installCommand": "pnpm install",
-  "env": {
-    "NODE_ENV": "production"
-  }
-}
