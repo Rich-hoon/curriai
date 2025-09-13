@@ -42,15 +42,15 @@ const nextConfig = {
       },
     ];
   },
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/app',
-        permanent: false,
-      },
-    ];
-  },
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: '/',
+  //       destination: '/app',
+  //       permanent: false,
+  //     },
+  //   ];
+  // },
 };
 
 export default withNextIntl(nextConfig);
