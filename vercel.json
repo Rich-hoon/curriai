@@ -12,6 +12,6 @@
   "env": {
     "NODE_ENV": "production"
   },
-  "installCommand": "pnpm install --frozen-lockfile",
+  "installCommand": "pnpm install",
   "buildCommand": "pnpm --filter @myapp/app build"
 }
