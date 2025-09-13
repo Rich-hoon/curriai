@@ -19,7 +19,15 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@myapp/prisma": ["../../packages/prisma"],
+      "@myapp/prisma/*": ["../../packages/prisma/*"],
+      "@myapp/api": ["../../packages/api"],
+      "@myapp/api/*": ["../../packages/api/*"],
+      "@myapp/ui": ["../../packages/ui"],
+      "@myapp/ui/*": ["../../packages/ui/*"],
+      "@myapp/utils": ["../../packages/utils"],
+      "@myapp/utils/*": ["../../packages/utils/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

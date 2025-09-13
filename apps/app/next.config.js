@@ -5,6 +5,7 @@ const withNextIntl = createNextIntlPlugin('./i18n.ts');
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   serverExternalPackages: ['@myapp/prisma'],
+  transpilePackages: ['@myapp/prisma', '@myapp/api', '@myapp/ui', '@myapp/utils'],
   images: {
     domains: ['images.clerk.dev', 'img.clerk.com'],
     remotePatterns: [

@@ -7,69 +7,11 @@
       "config": {
         "distDir": ".next"
       }
-    },
-    {
-      "src": "apps/www/package.json",
-      "use": "@vercel/next",
-      "config": {
-        "distDir": ".next"
-      }
     }
   ],
   "env": {
     "NODE_ENV": "production"
   },
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Strict-Transport-Security",
-          "value": "max-age=63072000; includeSubDomains; preload"
-        },
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "Permissions-Policy",
-          "value": "camera=(), microphone=(), geolocation=()"
-        }
-      ]
-    }
-  ],
-  "redirects": [
-    {
-      "source": "/dashboard",
-      "destination": "/app/dashboard",
-      "permanent": false
-    },
-    {
-      "source": "/curriculum",
-      "destination": "/app/curriculum",
-      "permanent": false
-    },
-    {
-      "source": "/learning",
-      "destination": "/app/learning",
-      "permanent": false
-    },
-    {
-      "source": "/community",
-      "destination": "/app/community",
-      "permanent": false
-    }
-  ]
+  "installCommand": "pnpm install",
+  "buildCommand": "cd apps/app && pnpm run build"
 }

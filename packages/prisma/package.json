@@ -6,8 +6,11 @@
   "exports": {
     ".": {
       "types": "./index.ts",
-      "zod": "./prisma/generated/zod/index.ts",
-      "default": "./dist/index.js"
+      "default": "./index.ts"
+    },
+    "./zod": {
+      "types": "./prisma/generated/zod/index.ts",
+      "default": "./prisma/generated/zod/index.ts"
     }
   },
   "scripts": {

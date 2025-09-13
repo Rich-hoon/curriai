@@ -22,12 +22,14 @@ function getQueryClient() {
 function getBaseUrl() {
   if (typeof window !== "undefined") {
     // browser should use relative path to the API endpoint
+    
     return "/api/trpc";
   }
 
   if (process.env.VERCEL_URL) {
     // reference for vercel.com
-    return `https://${process.env.VERCEL_URL}/api/trpc`;
+    return `
+    https://${process.env.VERCEL_URL}/api/trpc`;
   }
   // assume localhost
   return `http://localhost:${process.env.PORT ?? 3001}/api/trpc`;

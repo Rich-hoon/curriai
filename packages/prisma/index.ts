@@ -1,8 +1,8 @@
 // prisma/client.ts 와 같은 파일
 
-import { PrismaClient } from "./generated/prisma";
+import { PrismaClient } from "./generated/prisma/index.js";
 
-export * from "./generated/prisma";
+export * from "./generated/prisma/index.js";
 
 const createExtendedPrismaClient = () => {
   return new PrismaClient();
