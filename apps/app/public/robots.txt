@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Allow search engines to crawl public pages
+Allow: /
+Allow: /app/dashboard
+Allow: /app/community
+Allow: /help/*
+
+# Disallow private/user-specific pages
+Disallow: /app/curriculum/create
+Disallow: /app/learning/room/*
+Disallow: /app/settings/*
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://curri-ai.vercel.app/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

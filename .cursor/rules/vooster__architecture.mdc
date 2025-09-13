@@ -1,0 +1,134 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+Of course. As a senior technical architect, my focus is on creating a practical, lean, and actionable plan that empowers the development team to build the right product quickly.
+
+Here is the refined Technical Requirements Document (TRD) for LearnHub. It eliminates premature optimization and overly prescriptive details, focusing strictly on what's needed to deliver the MVP.
+
+---
+
+# **Technical Requirements Document (TRD) - LearnHub (MVP)**
+
+## 1. System Overview & Core Principles
+
+### 1.1. Architecture Goal
+To build a server-rendered web application using Next.js on Vercel, with Supabase serving as an all-in-one Backend as a Service (BaaS). This stack is chosen for maximum development velocity and minimum operational overhead for the MVP phase.
+
+### 1.2. Guiding Principles
+*   **MVP First, Simplicity Over Complexity:** We will only build what is required by the PRD's MVP scope. Features and optimizations not critical for launch will be deferred.
+*   **Leverage Managed Services:** Maximize the use of Supabase, Clerk, and Vercel to reduce infrastructure management and focus on core product features.
+*   **Stateless & Scalable Functions:** Core business logic, especially AI interactions, will be in serverless functions to ensure scalability and separation of concerns.
+
+### 1.3. Key Technical Goals (MVP)
+*   **AI Curriculum Generation:** Generate and stream a structured curriculum from a user prompt in under 30 seconds.
+*   **Performance:** Achieve a First Contentful Paint (FCP) of under 2.5 seconds on key pages.
+*   **Reliability:** The system must reliably support the initial target of 300 Daily Active Users (DAU).
+
+## 2. Technology Stack
+
+| Category | Technology | Rationale for MVP |
+|---|---|---|
+| **Framework** | Next.js (App Router) | Fast user experience (SSR), simplified data fetching, and strong ecosystem. |
+| **Backend** | Supabase | All-in-one BaaS (Postgres DB, Auth, Realtime, Edge Functions) for rapid development. |
+| **Authentication** | Clerk | Simplifies user management, social logins, and JWT handling with Next.js. |
+| **UI Components** | shadcn/ui + Tailwind CSS | Provides accessible, composable components for building the UI quickly. |
+| **Data Fetching** | TanStack Query (React Query) | Manages server state, caching, and automatic refetching to improve UX. |
+| **AI Integration** | OpenAI GPT-4 API | Provides the core intelligence for curriculum generation. |
+| **Deployment** | Vercel | Native integration with Next.js for seamless CI/CD and hosting. |
+
+*Note: Payment processing (LemonSqueezy) is deferred post-MVP as it is not a core MVP requirement.*
+
+## 3. System Architecture
+
+### 3.1. Component Diagram
+The architecture is straightforward, centered around the Next.js frontend and Supabase backend.
+
+```mermaid
+graph TD
+    subgraph User Device
+        A[Browser - Next.js App]
+    end
+
+    subgraph Vercel
+        B[Next.js Frontend/Server]
+        C[Edge Functions]
+    end
+
+    subgraph Third-Party Services
+        D[Supabase BaaS]
+        E[Clerk Auth]
+        F[OpenAI API]
+    end
+
+    A --> B
+    B -- Renders Pages & Fetches Data --> D
+    B -- Authenticates via --> E
+    B -- Invokes --> C
+    C -- Calls --> F
+    C -- Writes Results to --> D
+    D -- Realtime Updates --> A
+```
+
+### 3.2. Key Workflows
+
+1.  **AI Curriculum Generation:**
+    *   User submits a topic (e.g., "Next.js Frontend") in the Next.js client.
+    *   A Server Action or API Route invokes a Supabase Edge Function, passing the prompt.
+    *   The Edge Function securely calls the OpenAI API.
+    *   The function parses the AI response into a structured JSON format and saves it to the `curriculums` table in Supabase.
+    *   The client is notified of completion and fetches the new curriculum.
+
+2.  **Progress Tracking & Visualization:**
+    *   User checks off a task in the "Classroom" UI.
+    *   The client updates the `user_progress` table in Supabase.
+    *   Supabase's Realtime feature immediately pushes the change to the client.
+    *   The "Jandi Graph" (contribution graph) component re-fetches progress data to reflect the update.
+
+## 4. Database Schema (High-Level)
+
+The schema will be kept simple and flexible, using JSONB for unstructured or evolving data.
+
+*   `users`
+    *   Provided by Supabase Auth and Clerk. We will reference the `auth.users.id`.
+
+*   `curriculums`
+    *   `id` (uuid, pk)
+    *   `user_id` (uuid, fk to auth.users) - The curriculum creator.
+    *   `forked_from_id` (uuid, fk to curriculums.id, nullable) - Tracks origin for forks.
+    *   `title` (text)
+    *   `domain` (text) - e.g., 'Frontend', 'Backend'.
+    *   `content` (jsonb) - The structured curriculum (sections, topics, links, etc.).
+
+*   `user_progress`
+    *   `user_id` (uuid, pk, fk to auth.users)
+    *   `curriculum_id` (uuid, pk, fk to curriculums.id)
+    *   `completed_steps` (jsonb) - A list or object tracking completed topic IDs.
+    *   `updated_at` (timestamp) - Used for the Jandi Graph.
+
+*   `reviews`
+    *   `id` (uuid, pk)
+    *   `curriculum_id` (uuid, fk to curriculums.id)
+    *   `user_id` (uuid, fk to auth.users)
+    *   `rating` (smallint) - 1 to 5.
+    *   `comment` (text, nullable)
+
+## 5. MVP Implementation Plan
+
+This plan aligns directly with the 12-week MVP timeline from the PRD.
+
+| Weeks | Milestone | Key Technical Deliverables |
+|---|---|---|
+| **1-5** | **Core Foundation & AI PoC** | • Setup Next.js app, Supabase project, and Clerk integration.<br>• Implement user login/signup flow.<br>• Define and migrate initial DB schema.<br>• Build the Edge Function for AI curriculum generation (MVP version). |
+| **6-8** | **Learning Experience** | • Develop the "Classroom" UI to render curriculum `content`.<br>• Implement progress tracking logic (checkboxes updating `user_progress`).<br>• Basic 진도율 (progress percentage) display. |
+| **9-12** | **Community Features & Launch** | • Implement the "Jandi Graph" using `user_progress` data.<br>• Develop curriculum forking (row duplication) and editing (`content` update).<br>• Build the community review and rating system (β).<br>• Final QA, testing, and beta launch on Vercel. |
+
+## 6. Risks & Mitigation
+
+| Risk | Mitigation Strategy |
+|---|---|
+| **AI Content Quality is Poor** | **Primary:** Use GPT-4 for the highest quality. Implement robust prompting.<br>**Secondary:** Programmatically hide any curriculum with an average community rating below 3.5. |
+| **Scalability & Performance** | **Primary:** Supabase's standard tier is sufficient for the target DAU. We will use server-side rendering (SSR) and caching where appropriate.<br>**Secondary:** Identify and optimize slow queries as they arise. Defer any migration to a more complex architecture until user numbers justify it (>20k DAU). |
+| **External Service Downtime** (OpenAI, Clerk) | **Primary:** Implement reasonable timeouts and display clear, user-friendly error messages.<br>**Secondary:** For AI generation, cache results for popular topics to reduce API dependency and improve speed. |
+| **High OpenAI API Costs** | **Primary:** Enforce strict limits on curriculum generations per user per day.<br>**Secondary:** Monitor costs closely during beta and optimize prompts for token efficiency. |

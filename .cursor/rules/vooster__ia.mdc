@@ -1,0 +1,266 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+# LearnHub Information Architecture (IA)
+
+## 1. 사이트맵
+
+```
+LearnHub 플랫폼
+├── 홈 (/)
+├── 인증 (/auth)
+│   ├── 로그인 (/auth/login)
+│   ├── 회원가입 (/auth/signup)
+│   └── 비밀번호 재설정 (/auth/reset-password)
+├── 대시보드 (/dashboard) [인증 필요]
+│   ├── 학습 현황 (/dashboard/overview)
+│   ├── 진행률 분석 (/dashboard/analytics)
+│   └── 성취 배지 (/dashboard/achievements)
+├── 커리큘럼 라이브러리 (/curriculum) [인증 필요]
+│   ├── 전체 목록 (/curriculum/browse)
+│   ├── 내 커리큘럼 (/curriculum/my)
+│   ├── 새 커리큘럼 생성 (/curriculum/create)
+│   ├── 커리큘럼 상세 (/curriculum/:id)
+│   ├── 커리큘럼 편집 (/curriculum/:id/edit)
+│   └── 포크된 커리큘럼 (/curriculum/:id/fork)
+├── 학습실 (/learning) [인증 필요]
+│   ├── 강의실 메인 (/learning/room/:curriculumId)
+│   ├── 학습 콘텐츠 뷰어 (/learning/content/:contentId)
+│   ├── 진도 체크 (/learning/progress/:curriculumId)
+│   └── 학습 노트 (/learning/notes/:curriculumId)
+├── 커뮤니티 (/community) [인증 필요]
+│   ├── 커리큘럼 탐색 (/community/explore)
+│   ├── 리뷰 및 평가 (/community/reviews)
+│   ├── 리더보드 (/community/leaderboard)
+│   └── 토론 게시판 (/community/discussions)
+├── 알림 (/notifications) [인증 필요]
+├── 설정 (/settings) [인증 필요]
+│   ├── 프로필 설정 (/settings/profile)
+│   ├── 구독 관리 (/settings/subscription)
+│   ├── 알림 설정 (/settings/notifications)
+│   └── 연동 설정 (/settings/integrations)
+└── 도움말 (/help)
+    ├── FAQ (/help/faq)
+    ├── 사용 가이드 (/help/guide)
+    └── 문의하기 (/help/contact)
+```
+
+## 2. 사용자 흐름 (사용자 흐름)
+
+### 핵심 작업 1: 사용자 온보딩 및 첫 커리큘럼 생성
+1. 사용자가 홈페이지(/) 방문
+2. '시작하기' 버튼 클릭
+3. 회원가입 페이지(/auth/signup)로 이동
+4. 구글 계정 1-클릭 가입 완료
+5. 온보딩 모달에서 학습 목표 입력 ("Next.js 프론트엔드 취업")
+6. AI가 커리큘럼 자동 생성 (30초 대기)
+7. 대시보드(/dashboard)로 리다이렉트
+8. 생성된 커리큘럼 확인 후 '학습 시작' 클릭
+9. 학습실(/learning/room/:curriculumId)로 이동
+
+### 핵심 작업 2: 일일 학습 진행
+1. 대시보드(/dashboard)에서 진행 중인 커리큘럼 확인
+2. '오늘의 학습' 카드 클릭
+3. 학습실(/learning/room/:curriculumId) 진입
+4. 주차별 강의 목록에서 다음 강의 선택
+5. 학습 콘텐츠 뷰어(/learning/content/:contentId)에서 강의 시청
+6. 학습 완료 후 '완료' 버튼 클릭
+7. 진도율 업데이트 및 잔디 그래프 반영
+8. 다음 강의로 자동 이동 또는 학습실로 복귀
+
+### 핵심 작업 3: 커리큘럼 포크 및 커스터마이징
+1. 커뮤니티(/community/explore)에서 인기 커리큘럼 탐색
+2. 관심 있는 커리큘럼 상세 페이지(/curriculum/:id) 방문
+3. '포크하기' 버튼 클릭
+4. 포크된 커리큘럼(/curriculum/:id/fork) 생성
+5. '편집하기' 버튼으로 편집 모드(/curriculum/:id/edit) 진입
+6. 불필요한 강의 삭제 또는 새로운 자료 추가
+7. 변경사항 저장 후 내 커리큘럼(/curriculum/my)에서 확인
+8. 커스터마이징된 커리큘럼으로 학습 시작
+
+## 3. 네비게이션 구조
+
+### 글로벌 네비게이션 바 (GNB) - 상단 헤더
+- **로고 영역**: LearnHub 브랜드 로고 (홈으로 이동)
+- **글로벌 검색바**: 커리큘럼 통합 검색 기능
+- **사용자 메뉴**: 프로필 이미지, 알림 아이콘, 설정 드롭다운
+
+### 사이드바 네비게이션 (LNB) - 좌측 고정
+- **대시보드**: 학습 현황 및 분석
+- **커리큘럼 라이브러리**: 커리큘럼 관리 및 생성
+- **학습실**: 현재 진행 중인 학습
+- **커뮤니티**: 탐색, 리뷰, 토론
+- **알림**: 학습 리마인더 및 업데이트
+- **설정**: 계정 및 환경 설정
+
+### 푸터 네비게이션
+- **회사 정보**: 소개, 팀, 채용
+- **지원**: FAQ, 가이드, 문의
+- **정책**: 이용약관, 개인정보처리방침
+- **소셜 미디어**: Twitter, LinkedIn 링크
+
+## 4. 페이지 계층 구조
+
+```
+/ (깊이 1)
+├── /auth (깊이 1)
+│   ├── /auth/login (깊이 2)
+│   ├── /auth/signup (깊이 2)
+│   └── /auth/reset-password (깊이 2)
+├── /dashboard (깊이 1)
+│   ├── /dashboard/overview (깊이 2)
+│   ├── /dashboard/analytics (깊이 2)
+│   └── /dashboard/achievements (깊이 2)
+├── /curriculum (깊이 1)
+│   ├── /curriculum/browse (깊이 2)
+│   ├── /curriculum/my (깊이 2)
+│   ├── /curriculum/create (깊이 2)
+│   ├── /curriculum/:id (깊이 2)
+│   ├── /curriculum/:id/edit (깊이 3)
+│   └── /curriculum/:id/fork (깊이 3)
+├── /learning (깊이 1)
+│   ├── /learning/room/:curriculumId (깊이 2)
+│   ├── /learning/content/:contentId (깊이 2)
+│   ├── /learning/progress/:curriculumId (깊이 2)
+│   └── /learning/notes/:curriculumId (깊이 2)
+├── /community (깊이 1)
+│   ├── /community/explore (깊이 2)
+│   ├── /community/reviews (깊이 2)
+│   ├── /community/leaderboard (깊이 2)
+│   └── /community/discussions (깊이 2)
+├── /notifications (깊이 1)
+├── /settings (깊이 1)
+│   ├── /settings/profile (깊이 2)
+│   ├── /settings/subscription (깊이 2)
+│   ├── /settings/notifications (깊이 2)
+│   └── /settings/integrations (깊이 2)
+└── /help (깊이 1)
+    ├── /help/faq (깊이 2)
+    ├── /help/guide (깊이 2)
+    └── /help/contact (깊이 2)
+```
+
+## 5. 콘텐츠 구성
+
+| 페이지 | 핵심 콘텐츠 요소 |
+|--------|------------------|
+| 홈 (/) | 히어로 섹션, AI 커리큘럼 생성 데모, 주요 기능 소개, CTA 버튼, 사용자 후기 |
+| 대시보드 (/dashboard) | 학습 진행률 차트, 잔디 그래프, 오늘의 학습 카드, 성취 배지, 추천 커리큘럼 |
+| 커리큘럼 라이브러리 (/curriculum/browse) | 커리큘럼 카드 그리드, 필터 사이드바, 검색바, 정렬 옵션, 페이지네이션 |
+| 커리큘럼 생성 (/curriculum/create) | 목표 입력 폼, AI 생성 옵션, 템플릿 선택, 미리보기 영역, 생성 버튼 |
+| 커리큘럼 상세 (/curriculum/:id) | 커리큘럼 개요, 주차별 강의 목록, 리뷰 섹션, 통계 정보, 포크/시작 버튼 |
+| 학습실 (/learning/room/:curriculumId) | 진도율 헤더, 주차별 탭, 강의 체크리스트, 노트 영역, 다음 강의 버튼 |
+| 학습 콘텐츠 뷰어 (/learning/content/:contentId) | 비디오/텍스트 플레이어, 진도 슬라이더, 노트 패널, 완료 버튼, 네비게이션 |
+| 커뮤니티 탐색 (/community/explore) | 인기 커리큘럼 그리드, 카테고리 필터, 평점 정렬, 사용자 리뷰 미리보기 |
+| 내 프로필 (/settings/profile) | 프로필 이미지, 개인정보 폼, 학습 목표 설정, 소셜 연동 옵션, 저장 버튼 |
+
+## 6. 인터랙션 패턴
+
+### 모달 사용 패턴
+- **확인 모달**: 커리큘럼 삭제, 학습 초기화 등 중요한 액션
+- **생성 모달**: 빠른 커리큘럼 생성, 노트 추가
+- **미리보기 모달**: 커리큘럼 상세 정보 빠른 확인
+
+### 툴팁 사용 패턴
+- **도움말 툴팁**: 복잡한 기능에 대한 간단한 설명
+- **상태 툴팁**: 진행률, 배지 획득 조건 안내
+- **단축키 툴팁**: 키보드 단축키 힌트
+
+### 무한 스크롤 패턴
+- **커리큘럼 목록**: 스크롤 시 추가 커리큘럼 자동 로드
+- **커뮤니티 피드**: 리뷰 및 토론 글 무한 스크롤
+- **알림 목록**: 과거 알림 기록 점진적 로드
+
+### 드래그 앤 드롭 패턴
+- **커리큘럼 편집**: 강의 순서 변경
+- **대시보드 위젯**: 차트 및 카드 배치 커스터마이징
+
+### 실시간 업데이트 패턴
+- **진도율 바**: 학습 완료 시 즉시 애니메이션 업데이트
+- **잔디 그래프**: 일일 학습 완료 시 실시간 반영
+- **알림 배지**: 새로운 알림 수신 시 즉시 표시
+
+## 7. URL 구조
+
+### 일반 원칙
+- **리소스 기반**: `/resource-name`
+- **상세 페이지**: `/resource-name/:id`
+- **하위 액션**: `/resource-name/:id/action`
+- **사용자 소유**: `/resource-name/my`
+
+### 구체적 URL 규칙
+```
+홈페이지: /
+인증: /auth/login, /auth/signup, /auth/reset-password
+대시보드: /dashboard, /dashboard/analytics, /dashboard/achievements
+커리큘럼: /curriculum/browse, /curriculum/my, /curriculum/create
+커리큘럼 상세: /curriculum/:id, /curriculum/:id/edit, /curriculum/:id/fork
+학습: /learning/room/:curriculumId, /learning/content/:contentId
+커뮤니티: /community/explore, /community/reviews, /community/leaderboard
+설정: /settings/profile, /settings/subscription, /settings/notifications
+도움말: /help/faq, /help/guide, /help/contact
+```
+
+### SEO 최적화 고려사항
+- **의미있는 URL**: 커리큘럼 제목을 포함한 슬러그 사용 가능
+- **다국어 지원**: 향후 `/ko/`, `/en/` 접두사 확장 가능
+- **정적 페이지**: 도움말, FAQ는 정적 생성으로 SEO 최적화
+
+## 8. 컴포넌트 계층 구조
+
+### 글로벌 컴포넌트
+- **Header**: 로고, 검색바, 사용자 메뉴
+- **Sidebar**: 메인 네비게이션, 현재 페이지 표시
+- **Footer**: 회사 정보, 링크, 소셜 미디어
+- **Modal**: 범용 모달 컨테이너
+- **Toast**: 알림 메시지 표시
+- **LoadingSpinner**: 로딩 상태 표시
+
+### 대시보드 컴포넌트
+- **ProgressChart**: 학습 진행률 시각화
+- **GrassChart**: GitHub 스타일 잔디 그래프
+- **AchievementBadge**: 성취 배지 표시
+- **TodayLearningCard**: 오늘의 학습 추천
+- **QuickStatsCard**: 주요 통계 요약
+
+### 커리큘럼 컴포넌트
+- **CurriculumCard**: 커리큘럼 미리보기 카드
+- **CurriculumDetail**: 상세 정보 표시
+- **WeeklySchedule**: 주차별 학습 계획
+- **LectureCheckbox**: 강의 완료 체크
+- **ProgressBar**: 진도율 바
+- **ReviewSection**: 리뷰 및 평점
+
+### 학습실 컴포넌트
+- **LearningRoom**: 학습실 메인 컨테이너
+- **ContentViewer**: 비디오/텍스트 콘텐츠 플레이어
+- **NoteEditor**: 학습 노트 작성 도구
+- **NavigationPanel**: 강의 목록 네비게이션
+- **CompletionButton**: 학습 완료 버튼
+
+### 커뮤니티 컴포넌트
+- **CurriculumGrid**: 커리큘럼 그리드 레이아웃
+- **ReviewCard**: 사용자 리뷰 카드
+- **LeaderboardTable**: 순위표
+- **FilterSidebar**: 필터링 사이드바
+- **UserProfile**: 사용자 프로필 미니 카드
+
+### 폼 컴포넌트
+- **Input**: 기본 입력 필드
+- **TextArea**: 다줄 텍스트 입력
+- **Select**: 드롭다운 선택
+- **Checkbox**: 체크박스
+- **Button**: 다양한 스타일의 버튼
+- **FormGroup**: 폼 필드 그룹핑
+
+### 데이터 표시 컴포넌트
+- **Table**: 데이터 테이블
+- **Card**: 기본 카드 컨테이너
+- **Tag**: 태그/라벨 표시
+- **Avatar**: 사용자 아바타
+- **Badge**: 알림 배지
+- **Tooltip**: 툴팁 표시
+
+이 컴포넌트 계층 구조는 재사용성과 일관성을 보장하며, 디자인 가이드의 시각적 스타일과 완벽하게 일치하도록 구성되었습니다.

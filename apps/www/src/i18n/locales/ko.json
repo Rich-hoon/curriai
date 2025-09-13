@@ -1,0 +1,292 @@
+{
+  "common": {
+    "getStarted": "무료로 시작하기",
+    "signIn": "로그인",
+    "community": "커뮤니티"
+  },
+  "header": {
+    "home": "홈",
+    "features": "기능",
+    "pricing": "가격",
+    "faq": "FAQ",
+    "menuOpen": "메뉴 열기"
+  },
+  "hero": {
+    "badge": "AI 학습 플랫폼",
+    "title": "AI가 만드는\n당신만의 학습 로드맵",
+    "description": "정보 과부하 시대, 체계적인 학습 경로를 AI가 자동으로 생성합니다.\n목표를 입력하고 맞춤형 커리큘럼을 받아보세요.",
+    "imageAlt": "Curri.AI 대시보드 미리보기",
+    "tutorial": "데모 보기"
+  },
+  "solution": {
+    "sectionTitle": "핵심 기능",
+    "title": "Curri.AI의\n3가지 핵심 기능",
+    "description": "AI 기반 개인 맞춤 학습 플랫폼으로 체계적인 학습 경험을 제공합니다.",
+    "features": {
+      "prd": {
+        "title": "AI 커리큘럼 자동 생성",
+        "description": "목표를 입력하면 AI가 맞춤형 학습 로드맵을 즉시 생성합니다."
+      },
+      "plan": {
+        "title": "학습 진도 시각화",
+        "description": "GitHub 잔디 그래프처럼 학습 기록을 한눈에 파악하고 동기를 부여합니다."
+      },
+      "mcp": {
+        "title": "커뮤니티 기반 성장",
+        "description": "다른 학습자의 커리큘럼을 포크하고 리뷰하며 함께 성장합니다."
+      }
+    }
+  },
+  "howItWorks": {
+    "sectionTitle": "작동 방식",
+    "title": "3단계로\n시작하는 학습",
+    "description": "복잡한 과정 없이 간단한 3단계로 맞춤형 학습을 시작할 수 있습니다.",
+    "steps": {
+      "step1": {
+        "title": "목표 입력",
+        "description": "원하는 학습 목표나 기술 스택을 간단히 입력합니다. 예: 'Next.js 프론트엔드 취업'"
+      },
+      "step2": {
+        "title": "AI 로드맵 생성",
+        "description": "AI가 목표에 맞는 체계적인 커리큘럼과 학습 계획을 자동으로 생성합니다."
+      },
+      "step3": {
+        "title": "학습 및 기록",
+        "description": "강의실에서 체계적으로 학습하고, 진행 상황을 시각적으로 추적합니다."
+      }
+    }
+  },
+  "socialProof": {
+    "sectionTitle": "사용자 후기",
+    "title": "이미 수천 명의 학습자가\nCurri.AI와 함께 성장하고 있습니다",
+    "description": "실제 사용자들의 생생한 후기를 확인해보세요.",
+    "stats": {
+      "users": "2,500+",
+      "usersLabel": "활성 사용자",
+      "curriculums": "1,200+",
+      "curriculumsLabel": "생성된 커리큘럼",
+      "completionRate": "87%",
+      "completionRateLabel": "완주율"
+    },
+    "testimonials": {
+      "testimonial1": {
+        "name": "김지훈",
+        "role": "프론트엔드 개발자",
+        "content": "취업 준비할 때 방향을 잃고 있었는데, Curri.AI로 체계적인 로드맵을 만들 수 있어서 정말 도움이 됐어요. 3개월 만에 원하는 회사에 합격했습니다!"
+      },
+      "testimonial2": {
+        "name": "박서연",
+        "role": "컴퓨터공학과 학생",
+        "content": "AI가 만든 커리큘럼이 정말 체계적이고 실용적이에요. 특히 잔디 그래프로 학습 진도를 시각화할 수 있어서 동기부여가 됩니다."
+      },
+      "testimonial3": {
+        "name": "이민수",
+        "role": "UX 디자이너",
+        "content": "커뮤니티 기능이 정말 좋아요. 다른 사람들의 커리큘럼을 포크해서 나만의 학습 계획을 만들 수 있어서 효율적입니다."
+      }
+    }
+  },
+  "targetUsers": {
+    "sectionTitle": "대상 사용자",
+    "title": "이런 분들께\n적합합니다",
+    "description": "Curri.AI는 다양한 배경의 학습자들에게 체계적인 학습 경험을 제공합니다.",
+    "users": {
+      "vibecoder": {
+        "label": "취준생",
+        "title": "취업 준비생",
+        "description": "명확한 취업 목표가 있지만 학습 계획을 세우기 어려운 분들",
+        "persona1": "링크드인 활동 대학생·취준생",
+        "persona2": "체계적인 포트폴리오 구축 필요",
+        "persona3": "효율적인 시간 관리 필요"
+      },
+      "solo": {
+        "label": "자기주도 학습자",
+        "title": "자기주도 학습자",
+        "description": "트위터·블로그 기반으로 기술을 학습하는 개발자들",
+        "persona1": "트위터·블로그 기반 학습자",
+        "persona2": "최신 기술 트렌드 추구",
+        "persona3": "커뮤니티와의 지식 공유 선호"
+      },
+      "startup": {
+        "label": "재직 개발자",
+        "title": "재직 중 개발자·디자이너",
+        "description": "현재 직장에서 기술 스택을 확장하고 싶은 전문가들",
+        "persona1": "재직 중 기술 스택 확장",
+        "persona2": "업무와 병행한 학습 필요",
+        "persona3": "실무에 바로 적용 가능한 학습"
+      }
+    }
+  },
+  "roadmap": {
+    "sectionTitle": "로드맵",
+    "title": "다음 계획",
+    "description": "예정된 마일스톤과 우선순위를 간단히 소개하세요.",
+
+    "features": {
+      "contextIntegration": {
+        "name": "예정 기능 A",
+        "description": "해당 예정 기능의 짧은 설명을 적어주세요.",
+        "cta": "알림받기"
+      },
+      "teamCollaboration": {
+        "name": "예정 기능 B",
+        "description": "해당 예정 기능의 짧은 설명을 적어주세요.",
+        "cta": "알림받기"
+      },
+      "milestoneRoadmap": {
+        "name": "예정 기능 C",
+        "description": "해당 예정 기능의 짧은 설명을 적어주세요.",
+        "cta": "알림받기"
+      },
+      "insights": {
+        "name": "예정 기능 D",
+        "description": "해당 예정 기능의 짧은 설명을 적어주세요.",
+        "cta": "알림받기"
+      },
+      "whatsNext": {
+        "name": "피드백 공유",
+        "description": "커뮤니티에 피드백 공유를 유도하는 간단한 문장을 넣어주세요.",
+        "cta": "피드백 제공"
+      }
+    },
+    "community": {
+      "title": "커뮤니티에 참여하세요",
+      "description": "짧고 친절한 톤으로 참여를 유도하는 문장을 작성하세요.",
+      "hashtags": "#해시태그1 #해시태그2",
+      "cta": "커뮤니티"
+    }
+  },
+  "pricing": {
+    "title": "단순하고 투명한 플랜",
+    "description": "가격 정책을 한 문장으로 요약하세요.",
+    "yearlyDiscountLabel": "35% 할인",
+    "frequencies": {
+      "monthly": "월간",
+      "yearly": "연간"
+    },
+    "plans": {
+      "free": {
+        "title": "Free",
+        "unit": "/월",
+        "description": "시작하기에 적합한 플랜",
+        "credits": "월 100 크레딧",
+        "projects": "최대 3개 프로젝트",
+        "ai": "기본 기능",
+        "support": "커뮤니티 지원",
+        "buttonText": "무료로 시작하기"
+      },
+      "pro": {
+        "title": "Pro",
+        "unit": "/월",
+        "description": "성장 중인 개인/팀을 위한 플랜",
+        "credits": "월 500 크레딧",
+        "projects": "무제한 프로젝트",
+        "ai": "고급 기능",
+        "designer": "부가 도구",
+        "buttonText": "Pro 선택하기"
+      },
+      "max5": {
+        "title": "Business",
+        "unit": "/월",
+        "description": "전문적인 사용에 적합",
+        "credits": "월 2,000 크레딧",
+        "usage": "향상된 사용량",
+        "ai": "프리미엄 기능",
+        "image": "이미지 첨부 기능",
+        "buttonText": "Business 선택하기"
+      },
+      "max20": {
+        "title": "Enterprise+",
+        "unit": "/월",
+        "description": "대용량 사용을 위한 플랜",
+        "credits": "월 10,000 크레딧",
+        "usage": "프리미엄 사용량",
+        "ai": "최상위 기능",
+        "context": "가장 큰 한도",
+        "buttonText": "Enterprise+ 선택하기"
+      }
+    },
+    "beta": {
+      "price": "무료"
+    }
+  },
+  "faq": {
+    "title": "자주 묻는 질문",
+    "description": "FAQ 소개 문구를 간략히 작성하세요.",
+    "item1": {
+      "question": "여기에 질문을 작성하세요",
+      "answer": "간단하고 명확한 답변을 작성하세요."
+    },
+    "item2": {
+      "question": "여기에 질문을 작성하세요",
+      "answer": "간단하고 명확한 답변을 작성하세요."
+    },
+    "item3": {
+      "question": "여기에 질문을 작성하세요",
+      "answer": "간단하고 명확한 답변을 작성하세요."
+    },
+    "item4": {
+      "question": "여기에 질문을 작성하세요",
+      "answer": "간단하고 명확한 답변을 작성하세요."
+    },
+    "item5": {
+      "question": "여기에 질문을 작성하세요",
+      "answer": "간단하고 명확한 답변을 작성하세요."
+    },
+    "item6": {
+      "question": "여기에 질문을 작성하세요",
+      "answer": "간단하고 명확한 답변을 작성하세요."
+    }
+  },
+  "footer": {
+    "tagline": "AI와 함께하는 체계적인 학습 플랫폼",
+    "product": {
+      "title": "제품",
+      "features": "기능",
+      "pricing": "가격",
+      "roadmap": "로드맵"
+    },
+    "company": {
+      "contact": "문의"
+    },
+    "resources": {
+      "title": "리소스",
+      "community": "커뮤니티",
+      "support": "지원",
+      "feedback": "피드백"
+    },
+    "social": {
+      "title": "SNS",
+      "threads": "threads",
+      "instagram": "instagram"
+    },
+    "legal": {
+      "privacy": "개인정보처리방침",
+      "terms": "이용약관"
+    },
+    "copyright": "© 2025 LearnHub. All rights reserved."
+  },
+  "finalCTA": {
+    "title": "지금 바로\n시작해보세요!",
+    "description": "AI가 만드는 맞춤형 학습 로드맵으로 목표를 달성하세요.",
+    "cta": "무료로 시작하기",
+    "benefits": {
+      "freeAccess": {
+        "title": "무료 체험",
+        "description": "첫 번째 커리큘럼은 완전 무료로 생성됩니다."
+      },
+      "limitedSpots": {
+        "title": "제한된 베타",
+        "description": "베타 기간 동안만 특별 혜택을 제공합니다."
+      },
+      "earlyAdopter": {
+        "title": "얼리 어답터 혜택",
+        "description": "초기 사용자에게는 평생 무료 기능을 제공합니다."
+      }
+    }
+  },
+  "metadata": {
+    "title": "Curri.AI | AI 개인 맞춤 학습 플랫폼",
+    "description": "AI가 만드는 당신만의 학습 로드맵, 체계적인 학습 경험을 제공하는 Curri.AI"
+  }
+}

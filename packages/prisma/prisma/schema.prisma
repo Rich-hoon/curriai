@@ -1,0 +1,111 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider      = "prisma-client-js"
+  output        = "../generated/prisma"
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
+}
+
+generator zod {
+  provider = "zod-prisma-types"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// 사용자 모델: Clerk ID와 기본 정보만 관리
+model User {
+  id        String   @id
+  clerkId   String   @unique
+  email     String   @unique
+  username  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  curriculums   Curriculum[]
+  userProgress  UserProgress[]
+  reviews       Review[]
+  rateLimits    RateLimit[]
+}
+
+// 커리큘럼 모델
+model Curriculum {
+  id          String   @id @default(cuid())
+  title       String
+  description String?
+  domain      String // e.g., 'Frontend', 'Backend'
+  content     Json     // The structured curriculum (sections, topics, links, etc.)
+  isPublic    Boolean  @default(false)
+  forkCount   Int      @default(0)
+
+  creatorId String
+  creator   User   @relation(fields: [creatorId], references: [id])
+
+  // 포크 기능을 위한 자기 참조 관계
+  forkedFromId String?
+  forkedFrom   Curriculum?  @relation("CurriculumFork", fields: [forkedFromId], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  forks        Curriculum[] @relation("CurriculumFork")
+
+  userProgress UserProgress[]
+  reviews      Review[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([creatorId])
+  @@index([forkedFromId])
+}
+
+// 사용자 학습 진행률 모델
+model UserProgress {
+  userId       String
+  curriculumId String
+
+  completedSteps Json     // A list or object tracking completed topic IDs
+  progress       Int      @default(0) // Percentage 0-100
+  updatedAt      DateTime @updatedAt
+
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  curriculum Curriculum @relation(fields: [curriculumId], references: [id], onDelete: Cascade)
+
+  @@id([userId, curriculumId])
+  @@index([updatedAt]) // 잔디 그래프 조회를 위함
+}
+
+// 리뷰 및 평점 모델
+model Review {
+  id           String   @id @default(cuid())
+  rating       Int      // 1 to 5
+  comment      String?
+
+  userId       String
+  curriculumId String
+
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  curriculum Curriculum @relation(fields: [curriculumId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([userId, curriculumId])
+}
+
+// 레이트 리미팅 모델
+model RateLimit {
+  id        String   @id @default(cuid())
+  userId    String
+  date      String   // YYYY-MM-DD format
+  count     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, date])
+  @@index([userId])
+  @@index([date])
+}

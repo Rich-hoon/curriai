@@ -1,0 +1,337 @@
+{
+  "common": {
+    "getStarted": "Get Started Free",
+    "signIn": "Sign In",
+    "community": "Community"
+  },
+  "header": {
+    "home": "Home",
+    "features": "Features",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "menuOpen": "Open Menu"
+  },
+  "hero": {
+    "badge": "AI Learning Platform",
+    "title": "AI-Generated\nPersonal Learning Roadmaps",
+    "description": "In the age of information overload, AI automatically creates systematic learning paths.\nEnter your goals and receive personalized curricula.",
+    "imageAlt": "Curri.AI Dashboard Preview",
+    "tutorial": "View Demo"
+  },
+  "solution": {
+    "sectionTitle": "Core Features",
+    "title": "3 Core Features\nof Curri.AI",
+    "description": "An AI-based personalized learning platform that provides systematic learning experiences.",
+    "features": {
+      "prd": {
+        "title": "AI Curriculum Auto-Generation",
+        "description": "Enter your goals and AI instantly creates personalized learning roadmaps."
+      },
+      "plan": {
+        "title": "Learning Progress Visualization",
+        "description": "Track your learning history at a glance with GitHub-style grass charts for motivation."
+      },
+      "mcp": {
+        "title": "Community-Based Growth",
+        "description": "Fork and review other learners' curricula to grow together."
+      }
+    }
+  },
+  "howItWorks": {
+    "sectionTitle": "How It Works",
+    "title": "Start Learning\nin 3 Steps",
+    "description": "Start personalized learning with a simple 3-step process without complexity.",
+    "steps": {
+      "step1": {
+        "title": "Enter Goals",
+        "description": "Simply enter your desired learning goals or tech stack. Ex: 'Next.js Frontend Job'"
+      },
+      "step2": {
+        "title": "AI Roadmap Generation",
+        "description": "AI analyzes your goals and creates a detailed learning curriculum with modules and lessons."
+      },
+      "step3": {
+        "title": "Start Learning",
+        "description": "Follow the generated curriculum, track progress, and achieve your goals systematically."
+      }
+    }
+  },
+  "socialProof": {
+    "sectionTitle": "User Stories",
+    "title": "Trusted by\nLearning Enthusiasts",
+    "description": "See how learners are achieving their goals with Curri.AI.",
+    "testimonials": {
+      "testimonial1": {
+        "name": "Sarah Kim",
+        "role": "Frontend Developer",
+        "content": "Thanks to Curri.AI, I was able to systematically learn React and land my dream job. The AI-generated curriculum was perfect for my learning style."
+      },
+      "testimonial2": {
+        "name": "Mike Chen",
+        "role": "Backend Developer",
+        "content": "The community feature is amazing. I forked other developers' curricula and customized them for my needs. It saved me months of research time."
+      },
+      "testimonial3": {
+        "name": "Emily Park",
+        "role": "UI/UX Designer",
+        "content": "The progress visualization feature keeps me motivated. Seeing my daily learning activities on the grass chart is incredibly satisfying."
+      }
+    },
+    "stats": {
+      "users": "10,000+",
+      "usersLabel": "Active Learners",
+      "curriculums": "50,000+",
+      "curriculumsLabel": "Generated Curricula",
+      "completionRate": "85%",
+      "completionRateLabel": "Completion Rate"
+    }
+  },
+  "targetUsers": {
+    "sectionTitle": "Target Users",
+    "title": "Perfect for\nThese Learners",
+    "description": "Curri.AI is designed for learners who want systematic and efficient learning experiences.",
+    "users": {
+      "vibecoder": {
+        "label": "Students & Job Seekers",
+        "title": "Career Preparation\nMade Easy",
+        "description": "From programming basics to advanced skills, get a systematic learning path for your career goals.",
+        "persona1": "LinkedIn active students and job seekers",
+        "persona2": "Systematic learning path needs",
+        "persona3": "Efficient time management required"
+      },
+      "solo": {
+        "label": "Self-Directed Learners",
+        "title": "Self-Directed Learners",
+        "description": "Developers who learn technologies based on Twitter and blogs",
+        "persona1": "Twitter and blog-based learners",
+        "persona2": "Pursuing latest technology trends",
+        "persona3": "Prefer knowledge sharing with community"
+      },
+      "startup": {
+        "label": "Working Developers",
+        "title": "Working Developers\n& Designers",
+        "description": "Professionals who want to expand their tech stack at their current workplace",
+        "persona1": "Expanding tech stack while working",
+        "persona2": "Learning needs alongside work",
+        "persona3": "Learning applicable to actual work"
+      }
+    }
+  },
+  "roadmap": {
+    "sectionTitle": "Roadmap",
+    "title": "What's Next",
+    "description": "Briefly introduce planned milestones and priorities.",
+    "features": {
+      "contextIntegration": {
+        "name": "Planned Feature A",
+        "description": "Brief description of this planned feature.",
+        "cta": "Get Notified"
+      },
+      "teamCollaboration": {
+        "name": "Planned Feature B",
+        "description": "Brief description of this planned feature.",
+        "cta": "Get Notified"
+      },
+      "milestoneRoadmap": {
+        "name": "Planned Feature C",
+        "description": "Brief description of this planned feature.",
+        "cta": "Get Notified"
+      },
+      "insights": {
+        "name": "Planned Feature D",
+        "description": "Brief description of this planned feature.",
+        "cta": "Get Notified"
+      },
+      "whatsNext": {
+        "name": "Share Feedback",
+        "description": "Simple sentence encouraging community feedback sharing.",
+        "cta": "Provide Feedback"
+      }
+    },
+    "community": {
+      "title": "Join the Community",
+      "description": "Write a short, friendly sentence encouraging participation.",
+      "hashtags": "#hashtag1 #hashtag2",
+      "cta": "Community"
+    }
+  },
+  "pricing": {
+    "title": "Simple and Transparent Plans",
+    "description": "Summarize pricing policy in one sentence.",
+    "yearlyDiscountLabel": "35% off",
+    "frequencies": {
+      "monthly": "Monthly",
+      "yearly": "Yearly"
+    },
+    "plans": {
+      "free": {
+        "title": "Free",
+        "unit": "/month",
+        "description": "Plan suitable for getting started",
+        "credits": "100 credits per month",
+        "projects": "Up to 3 projects",
+        "ai": "Basic features",
+        "support": "Community support",
+        "buttonText": "Get Started Free"
+      },
+      "pro": {
+        "title": "Pro",
+        "unit": "/month",
+        "description": "Plan for growing individuals/teams",
+        "credits": "500 credits per month",
+        "projects": "Unlimited projects",
+        "ai": "Advanced features",
+        "designer": "Additional tools",
+        "buttonText": "Choose Pro"
+      },
+      "max5": {
+        "title": "Business",
+        "unit": "/month",
+        "description": "Suitable for professional use",
+        "credits": "2,000 credits per month",
+        "usage": "Enhanced usage",
+        "ai": "Premium features",
+        "image": "Image attachment feature",
+        "buttonText": "Choose Business"
+      },
+      "max20": {
+        "title": "Enterprise+",
+        "unit": "/month",
+        "description": "For large teams and organizations",
+        "credits": "10,000 credits per month",
+        "usage": "Maximum usage",
+        "ai": "Enterprise features",
+        "context": "Advanced context integration",
+        "buttonText": "Contact Sales"
+      }
+    },
+    "beta": {
+      "price": "Free during beta"
+    }
+  },
+  "faq": {
+    "sectionTitle": "FAQ",
+    "title": "Frequently Asked\nQuestions",
+    "description": "Find answers to common questions about Curri.AI.",
+    "item1": {
+      "question": "How accurate are the AI-generated curricula?",
+      "answer": "Our AI is trained on the latest learning resources and industry best practices. The generated curricula are continuously improved based on user feedback and completion rates."
+    },
+    "item2": {
+      "question": "Can I customize the generated curriculum?",
+      "answer": "Yes! You can edit, add, or remove lessons from any AI-generated curriculum. You can also fork curricula from other users and customize them."
+    },
+    "item3": {
+      "question": "Is my learning progress data secure?",
+      "answer": "Absolutely. We use enterprise-grade security measures to protect your data. Your learning progress is private and only you can access it."
+    },
+    "item4": {
+      "question": "What if I'm not satisfied with the curriculum?",
+      "answer": "You can always regenerate a curriculum with different parameters, or browse and fork curricula from other successful learners in the community."
+    },
+    "item5": {
+      "question": "How much does it cost to use Curri.AI?",
+      "answer": "Curri.AI offers a free plan with basic features. Premium plans are available for advanced features and unlimited curriculum generation."
+    },
+    "item6": {
+      "question": "Can I share my curricula with others?",
+      "answer": "Yes! You can make your curricula public for others to fork and learn from. This helps build a community of knowledge sharing."
+    }
+  },
+  "finalCTA": {
+    "title": "Ready to Start Your\nLearning Journey?",
+    "description": "Join thousands of learners who are achieving their goals with AI-powered personalized curricula.",
+    "cta": "Get Started Free",
+    "secondaryCta": "View Demo",
+    "benefits": {
+      "freeAccess": {
+        "title": "Free Access",
+        "description": "Start learning immediately with our free plan"
+      },
+      "limitedSpots": {
+        "title": "Limited Spots",
+        "description": "Join early adopters and shape the future of learning"
+      },
+      "earlyAdopter": {
+        "title": "Early Adopter Benefits",
+        "description": "Get premium features at no cost during beta"
+      }
+    }
+  },
+  "footer": {
+    "description": "AI-powered personalized learning platform that creates systematic learning experiences.",
+    "links": {
+      "product": {
+        "title": "Product",
+        "items": [
+          { "name": "Features", "href": "#features" },
+          { "name": "Pricing", "href": "#pricing" },
+          { "name": "FAQ", "href": "#faq" }
+        ]
+      },
+      "company": {
+        "title": "Company",
+        "items": [
+          { "name": "About", "href": "#about" },
+          { "name": "Blog", "href": "#blog" },
+          { "name": "Careers", "href": "#careers" }
+        ]
+      },
+      "support": {
+        "title": "Support",
+        "items": [
+          { "name": "Help Center", "href": "#help" },
+          { "name": "Contact", "href": "#contact" },
+          { "name": "Status", "href": "#status" }
+        ]
+      },
+      "legal": {
+        "title": "Legal",
+        "items": [
+          { "name": "Privacy Policy", "href": "/privacy" },
+          { "name": "Terms of Service", "href": "/terms" },
+          { "name": "Cookie Policy", "href": "#cookies" }
+        ]
+      }
+    },
+    "copyright": "© 2024 Curri.AI. All rights reserved.",
+    "social": {
+      "twitter": "Follow us on Twitter",
+      "linkedin": "Connect on LinkedIn",
+      "github": "Star us on GitHub"
+    }
+  },
+  "footer": {
+    "tagline": "Systematic learning platform with AI",
+    "product": {
+      "title": "Product",
+      "features": "Features",
+      "pricing": "Pricing",
+      "roadmap": "Roadmap"
+    },
+    "company": {
+      "contact": "Contact"
+    },
+    "resources": {
+      "title": "Resources",
+      "community": "Community",
+      "support": "Support",
+      "feedback": "Feedback"
+    },
+    "social": {
+      "title": "Social",
+      "threads": "Threads",
+      "instagram": "Instagram"
+    },
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "copyright": "© 2025 Curri.AI. All rights reserved."
+  },
+  "metadata": {
+    "title": "Curri.AI - AI-Powered Personalized Learning Platform",
+    "description": "Create personalized learning roadmaps with AI. Track progress, join community, and achieve your learning goals systematically.",
+    "keywords": "AI learning, personalized curriculum, learning platform, education technology, online learning"
+  }
+}
